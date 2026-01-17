@@ -1,5 +1,6 @@
 from pathlib import Path
 
+import os
 from dotenv import load_dotenv
 from loguru import logger
 
@@ -20,6 +21,10 @@ MODELS_DIR = PROJ_ROOT / "models"
 
 REPORTS_DIR = PROJ_ROOT / "reports"
 FIGURES_DIR = REPORTS_DIR / "figures"
+
+# Authentication vars from .env file
+DATABASE_URL = os.environ.get("DATABASE_URL")
+APP_TOKEN = os.environ.get("APP_TOKEN")
 
 # If tqdm is installed, configure loguru with tqdm.write
 # https://github.com/Delgan/loguru/issues/135
